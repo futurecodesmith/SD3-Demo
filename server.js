@@ -6,6 +6,7 @@ const RTM = require("satori-sdk-js");
 const streamline = require('./lib/index.js');
 const dotenv = require('dotenv');
 
+
 dotenv.load()
 
 //---------------SEND CLIENT FILES-----------------------
@@ -100,6 +101,7 @@ bikeStream.connect((socket) => {
   bikeStream.scatter(socket, myData2, config2);
   bikeStream.wordCloud(socket);
 });
+
 
 server.listen(process.env.PORT || 3000, () => console.log('SERVER RUNNING ON 3000'));
 

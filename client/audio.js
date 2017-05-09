@@ -1,5 +1,7 @@
 
-let socket = io.connect();
+//let socket = io.connect();
+var socket = wsEvents(new WebSocket('ws://localhost:3000'));
+
 
 /////////////////TEST IF AUDIO WORKS IN BROWSER//////////
 window.SpeechRecognition = window.SpeechRecognition ||

@@ -1,5 +1,7 @@
 (() => {
 
+  var socket = wsEvents(new WebSocket('ws://localhost:3000'));
+
   //get data from socket and store it in freq
   var freq = [{"text":"your","size": 10},{"text":"the","size": 20},{"text":"at","size": 10}];
 
@@ -8,7 +10,7 @@
       return obj.text === word;
     })
   }
-
+  //socket gets defined from audio.js file
   socket.on('send audioData', (data) => {
     console.log('DATA RECEIVED', Date.now());
     //if word is in freq arr, then add 1; if not add it

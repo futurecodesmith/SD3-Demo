@@ -1,6 +1,7 @@
 (() => {
 
-  let socket = io.connect();
+  var socket = wsEvents(new WebSocket('ws://localhost:3000'));
+
 
   var margin = { top: 25, right: 20, bottom: 25, left: 20 };
   var width = 400 - margin.left - margin.right;
