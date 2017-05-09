@@ -1,9 +1,7 @@
 //can't use iffy b/c stops recording
 
-
 //let socket = io.connect();
-var socket = wsEvents(new WebSocket('ws://localhost:3000'));
-
+var ws = wsEvents(new WebSocket('ws://localhost:3000'));
 
 /////////////////TEST IF AUDIO WORKS IN BROWSER//////////
 window.SpeechRecognition = window.SpeechRecognition ||
@@ -32,7 +30,7 @@ if (window.SpeechRecognition === null) {
         transcription.textContent = event.results[i][0].transcript;
 
         //send to socket
-        socket.emit('send audioText', transcription.textContent)
+        ws.emit('sendAudioText', transcription.textContent)
         console.log('AUDIO DATA SENT', Date.now())
 
       } else {

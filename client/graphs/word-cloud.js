@@ -1,6 +1,6 @@
 //can't use iffy b/c stops recording
 
-  var socket = wsEvents(new WebSocket('ws://localhost:3000'));
+  var ws = wsEvents(new WebSocket('ws://localhost:3000'));
 
   //get data from socket and store it in freq
   var freq = [{"text":"your","size": 10},{"text":"the","size": 20},{"text":"at","size": 10}];
@@ -11,7 +11,7 @@
     })
   }
   //socket gets defined from audio.js file
-  socket.on('send audioData', (data) => {
+  ws.on('sendAudioData', (data) => {
     console.log('DATA RECEIVED', Date.now());
     //if word is in freq arr, then add 1; if not add it
     data.split(' ').forEach(word => {

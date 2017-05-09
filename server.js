@@ -121,10 +121,15 @@ let config2 = {
 let bikeStream = new streamline(server);
 
 bikeStream.connect((socket) => {
+  bikeStream.wordCloud(socket);
   bikeStream.line(socket, myData, config);
   bikeStream.scatter(socket, myData2, config2);
-  bikeStream.wordCloud(socket);
 });
+
+
+
+
+
 
 
 server.listen(process.env.PORT || 3000, () => console.log('SERVER RUNNING ON 3000'));
