@@ -1,5 +1,6 @@
 (function() {
-let socket = io.connect();
+  
+var socket = wsEvents(new WebSocket('ws://localhost:3000'));
 
 //set initial SVG params
 let margin = { top: 25, right: 20, bottom: 25, left: 20 };

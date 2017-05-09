@@ -12,6 +12,8 @@
     "nodemon": "1.11.0",
     "path": "^0.12.7",
     "satori-sdk-js": "^1.0.1",
-    "socket.io": "^1.7.3"
+    "socket.io": "^1.7.3",
+    "ws": "^2.3.1",
+    "ws-events": "^1.0.0"
   }
 }

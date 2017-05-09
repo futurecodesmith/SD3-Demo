@@ -1,4 +1,6 @@
-(() => {
+//can't use iffy b/c stops recording
+
+  var ws = wsEvents(new WebSocket('ws://localhost:3000'));
 
   let dataObj = {};
 
@@ -16,8 +18,8 @@
       return obj.text === word;
     })
   }
-
-  socket.on('send audioData', (data) => {
+  //socket gets defined from audio.js file
+  ws.on('sendAudioData', (data) => {
     console.log('DATA RECEIVED', Date.now());
     //if word is in freq arr, then add 1; if not add it
     data.split(' ').forEach(word => {
@@ -82,4 +84,4 @@
 
   })
 
-})()
+// })()

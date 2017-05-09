@@ -16,6 +16,31 @@ app.get('/', (req, res) => {
 });
 
 
+//----------------sockets--------------------------
+// const WebSocket = require('ws');
+// const wsEvents = require('ws-events');
+// const wss = new WebSocket.Server({ server });
+// let connections = [];
+
+// wss.on('connection', function connection(ws) {
+//   connections.push(ws);
+//   console.log('CONNECTED: %s SOCKETS CONNECTED', connections.length)
+
+//   ws.on('close', (data) => {
+//     connections.splice(connections.indexOf(ws), 1);
+//     console.log('CONNECTED: %s SOCKETS CONNECTED', connections.length);
+//   });
+
+//   const events = wsEvents(ws);
+  
+//   events.on('send audioText', (data) => {
+//     console.log('DATA GOTTEN IN SERVER', data);
+//     events.emit('send audioData', data);
+//   });
+
+// });
+
+
 //______________GET DATA____________________________________
 
 let myData = [];
@@ -105,10 +130,16 @@ let config3 = {
 let bikeStream = new streamline(server);
 
 bikeStream.connect((socket) => {
+  bikeStream.wordCloud(socket);
   bikeStream.line(socket, myData, config);
   bikeStream.scatter(socket, myData2, config2);
-  bikeStream.wordCloud(socket, config3);
 });
+
+
+
+
+
+
 
 server.listen(process.env.PORT || 3000, () => console.log('SERVER RUNNING ON 3000'));
 
