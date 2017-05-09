@@ -1,3 +1,5 @@
+//can't use iffy b/c stops recording
+
 
 //let socket = io.connect();
 var socket = wsEvents(new WebSocket('ws://localhost:3000'));

@@ -6,7 +6,6 @@ const RTM = require("satori-sdk-js");
 const streamline = require('./lib/index.js');
 const dotenv = require('dotenv');
 
-
 dotenv.load()
 
 //---------------SEND CLIENT FILES-----------------------
@@ -15,6 +14,31 @@ app.use(express.static(path.join(__dirname, 'client')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/home-page.html'));
 });
+
+
+//----------------sockets--------------------------
+// const WebSocket = require('ws');
+// const wsEvents = require('ws-events');
+// const wss = new WebSocket.Server({ server });
+// let connections = [];
+
+// wss.on('connection', function connection(ws) {
+//   connections.push(ws);
+//   console.log('CONNECTED: %s SOCKETS CONNECTED', connections.length)
+
+//   ws.on('close', (data) => {
+//     connections.splice(connections.indexOf(ws), 1);
+//     console.log('CONNECTED: %s SOCKETS CONNECTED', connections.length);
+//   });
+
+//   const events = wsEvents(ws);
+  
+//   events.on('send audioText', (data) => {
+//     console.log('DATA GOTTEN IN SERVER', data);
+//     events.emit('send audioData', data);
+//   });
+
+// });
 
 
 //______________GET DATA____________________________________
