@@ -2,6 +2,14 @@
 
   var ws = wsEvents(new WebSocket('ws://localhost:3000'));
 
+  let dataObj = {};
+
+  socket.on('send custom', (emitData) => {
+    for (let key in emitData) {
+      dataObj[key] = emitData[key]
+    }
+  });
+
   //get data from socket and store it in freq
   var freq = [{"text":"your","size": 10},{"text":"the","size": 20},{"text":"at","size": 10}];
 
@@ -15,6 +23,7 @@
     console.log('DATA RECEIVED', Date.now());
     //if word is in freq arr, then add 1; if not add it
     data.split(' ').forEach(word => {
+      word = word.toLowerCase();
       freq.forEach(obj => {
         if (obj.text === word) {
           obj.size += 20;
@@ -32,17 +41,20 @@
   //--------------------CREATE GRAPH----------------------------------
     //d3 version 3 way of adding color;
     //let fillColor = d3.scale.category20b();
-    
+    let color = d3.scaleLinear()
+      .domain(dataObj.colorDomain)
+      .range(dataObj.colors);
+
     let fillColor = d3.scaleOrdinal(d3.schemeCategory20);
-    let w = 1200;
-    let h = 500;
+    let w = dataObj.width;
+    let h = dataObj.height;
 
     cloud()
       .size([w, h])
       .words(freq) 
-      .padding(25)
-      .rotate(0)      
-      .font("Impact")
+      .padding(dataObj.padding)
+      .rotate(dataObj.rotate)      
+      .font(dataObj.font)
       .fontSize(function(d) { return d.size; })
       .on("end", drawCloud)
       .start();
@@ -61,8 +73,8 @@
           .data(words)
           .enter().append("text")
           .style("font-size", function(d) { return (d.size) + "px"; })
-          .style("font-family", "Impact")
-          .style("fill", function(d, i) { return fillColor(i); })
+          .style("font-family", dataObj.font)
+          .style("fill", function(d, i) { return color(i); })
           .attr("text-anchor", "middle")
           .attr("transform", function(d,i) {
             return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
