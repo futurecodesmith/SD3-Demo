@@ -8,7 +8,7 @@
   let settings;
 
   socket.on('sendScatterData', (data) => {
-    // console.log('data: ', data);
+    console.log('TWITdata: ', data);
     if (data.length > 0) {
       if (!settings) settings = drawGrid(data);
 

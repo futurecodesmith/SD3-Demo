@@ -46,6 +46,8 @@ rtm.on("enter-connected", function () {
 let subscriptionBike = rtm.subscribe(channelBike, RTM.SubscriptionMode.SIMPLE);
 subscriptionBike.on('rtm/subscription/data', function (pdu) {
   pdu.body.messages.forEach(function (msg) {
+    
+    console.log('MESSAGE STATION', msg.station_id);
 
     //line chart data
     if (msg.station_id < 300) {
@@ -181,7 +183,8 @@ subscriptionTwitter.on('rtm/subscription/data', function (pdu) {
   });
 });
 
-rtm.start();
+
+// rtm.start();
 
 //____________________CONFIGURATION FILES___________________________________
 
@@ -329,4 +332,14 @@ myStream.connect((socket) => {
   myStream.bubbleGraph(socket, bubbleData, bubbleConfig);
   myStream.pie(socket, pieData, pieConfig);
   myStream.map(socket, mapData, mapConfig);
+// // console.log('CONNECT LENGTH: ',myStream.connections.length);
+//   console.log('START: ', rtm.start);
+  if (myStream.connections.length === 1) rtm.start();
+  
+  setInterval(()=>{
+    if (myStream.connections.length === 0) {
+      rtm.stop();
+      console.log('RTM STOPPED');
+    }
+  }, 1000)
 });

@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
-<!--  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
--->  
+  <!--  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" rel="stylesheet">
+-->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="audio-style.css">
   <title>StreamLine D3</title>
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-<!-- Bar Graph -->
+  <!-- Bar Graph -->
   <div class="bar-container">
     <div id="bar-graph"></div>
   </div>
@@ -34,9 +34,13 @@
 
   <div class="pitch-container">
     <h3>Streaming Data Visualized</h3>
-    <p>The face of data is changing. In the coming years, the amount of streaming data will increase dramatically. We will need ways to analyze and visualize this data more than ever before. StreamLineD3 is javascript library that connects real-time data streams with d3. You choose your api and it sets up your socket connection. Choose from six different template graphs optimized for streaming data. After you enter your parameters, your graph is done! And try out using local streams, too. Go play with the speech to text visualization tool below!</p>
+    <p>The face of data is changing. In the coming years, the amount of streaming data will increase dramatically. We will need
+      ways to analyze and visualize this data more than ever before. StreamLineD3 is javascript library that connects real-time
+      data streams with d3. You choose your api and it sets up your socket connection. Choose from six different template
+      graphs optimized for streaming data. After you enter your parameters, your graph is done! And try out using local streams,
+      too. Go play with the speech to text visualization tool below!</p>
   </div>
-  
+
   <div class="benefits-container">
     <div class="third">
       <img src="images/gear-icon.png" alt="customizable icon">
@@ -69,7 +73,7 @@
     <div class="chart">
       <!-- Scatter Graph -->
       <div id="scatter-plot"></div>
-       <h2>Likes per tweet, streaming from Twitter</h2>
+      <h2>Likes per tweet, streaming from Twitter</h2>
     </div>
     <div class="chart">
       <div id="bubbleForce"></div>
@@ -80,10 +84,10 @@
   </div>
 
   <div class="instructions-container">
-    <h3>For detailed instructions, visit our <a href="https://github.com/StreamlineD3/StreamlineD3#getting-started">Github</a> page.</h3>
+    <h3>For detailed instructions, visit our <a href="https://github.com/StreamlineD3/StreamlineD3#getting-started">Github</a>      page.</h3>
   </div>
 
-<!-- Map Graph -->
+  <!-- Map Graph -->
   <div class="map-container">
     <div id="map"></div>
     <h2>Satellite locations, streaming from NASA and Norad</h2>
@@ -112,13 +116,13 @@
       <button id="clear-all" class="button-demo">Clear</button>
     </div>
     <span id="ws-unsupported" class="hidden">API not supported</span>
-    
+
     <div id="log"></div>
   </div>
 
   <div id="word-cloud"></div>
 
-<!--/////////////////////////////////////////////////////////////////////-->
+  <!--/////////////////////////////////////////////////////////////////////-->
 
 
   <footer id="footer">
@@ -126,13 +130,13 @@
   </footer>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
- 
+
   <!--<script src="/socket.io/socket.io.js"></script>-->
   <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.8.0/d3.min.js"></script>-->
   <!--<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>-->
- 
+
   <script src="https://unpkg.com/topojson-client@3"></script>
-  
+
   <script src="graphs/d3.min.js"></script>
   <script src="graphs/d3-scale-chromatic.min.js"></script>
   <script src="graphs/socket-client.js"></script>
@@ -147,10 +151,16 @@
   <script type="text/javascript" src="graphs/line.js"></script> 
   <script type="text/javascript" src="graphs/bar.js"></script>
 
+
   <script src="audio.js"></script>
   <script src="graphs/word-cloud.js"></script>
-  
-  <!--/*<script src="http://cdn.jsdelivr.net/gh/StreamlineD3/SD3-Demo@1.2/client/graphs/bundle.min.js"></script>*/-->
 
+  <!--/*<script src="http://cdn.jsdelivr.net/gh/StreamlineD3/SD3-Demo@1.2/client/graphs/bundle.min.js"></script>*/-->
+  <script>
+    window.onunload = function () {
+      socket.emit('SEND_CLOSE', 'closed');
+    }
+  </script>
 </body>
+
 </html>

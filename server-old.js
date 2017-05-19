@@ -87,8 +87,10 @@ subscriptionTraffic.on('rtm/subscription/data', function (pdu) {
   pdu.body.messages.forEach(function (msg) {
 
     //bar data 
+
       if (msg.Borough === 'Staten island') msg.Borough = 'Staten Island';
       if (barQueue.length < 100) barQueue.push(msg);
+
   });
 });
 
@@ -118,7 +120,6 @@ subscriptionTV.on('rtm/subscription/data', function (pdu) {
     };
   })
 });
-
 function decDegrees(string) {
   let result = string.split(':');
   let degrees = Number(result[0]);
@@ -132,12 +133,13 @@ function decDegrees(string) {
 }
 let nasaCounter = 0;
 
+
 let subscriptionNASA = rtm.subscribe(channelNASA, RTM.SubscriptionMode.SIMPLE);
 subscriptionNASA.on('rtm/subscription/data', function (pdu) {
   pdu.body.messages.forEach(function (msg) {
     nasaCounter += 1;
 
-    if(mapData.length < 60 || nasaCounter % 200 === 0) {
+    if (mapData.length < 60 || nasaCounter % 200 === 0) {
       let lat = decDegrees(msg.latitude);
       let lon = decDegrees(msg.longitude);
 
@@ -152,12 +154,15 @@ subscriptionNASA.on('rtm/subscription/data', function (pdu) {
       else {
         for (let i = 0; i < mapData.length; i++) {
           if (mapData[i].satellite === msg.satellite) {
+
             mapData[i] = Object.assign({},msg);
           }
         }
       }
     }
+
     if(nasaCounter > 1500) nasaCounter = 0;
+
   });
   // console.log('MAP DATA LEN: ', mapData.length);
 });
@@ -188,7 +193,8 @@ subscriptionTwitter.on('rtm/subscription/data', function (pdu) {
   });
 });
 
-rtm.start();
+
+
 
 //____________________CONFIGURATION FILES___________________________________
 
@@ -206,7 +212,7 @@ let lineConfig = {
   yScale: 'num_bikes_available',
   xLabel_text: 'at the currently reporting station',
   yLabel_text: 'number of available bikes',
-  lineColor:'#5176B6',
+  lineColor: '#5176B6',
   dotColor: 'DodgerBlue'
 };
 
@@ -264,7 +270,7 @@ let bubbleConfig = {
   setHeight: 400,
   text: 'num_bikes_available',
   volume: 'num_bikes_available',
-  color:'#63d198'
+  color: '#63d198'
 };
 
 let pieConfig = {
@@ -281,7 +287,7 @@ let mapConfig = {
   longitude: 'longitude',
   mapItem: 'satellite', //the thing being mapped
   propTwo: '',
-  color:'#B0C4DE'
+  color: '#B0C4DE'
 };
 
 //_________________________QUEUE________________________________
@@ -325,4 +331,19 @@ myStream.connect((socket) => {
   myStream.bubbleGraph(socket, bubbleData, bubbleConfig);
   myStream.pie(socket, pieData, pieConfig);
   myStream.map(socket, mapData, mapConfig);
+  // // console.log('CONNECT LENGTH: ',myStream.connections.length);
+  //   console.log('START: ', rtm.start);
+  if (myStream.connections.length === 1) rtm.start();
+
+  socket.on('SEND_CLOSE', (data) => {
+    
+    setTimeout(() => {
+      if (myStream.connections.length === 0) {
+        rtm.stop()
+
+        console.log('stopped RTM');
+      };
+    }, 50)
+
+  })
 });

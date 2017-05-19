@@ -104,6 +104,7 @@
       .attr('class', 'circle point-dot')
       .style('fill', d => color(d.latitude))
       .style('opacity', 0.75)
+      .style('stroke', 'orange')
       
 
   //UPDATE
@@ -115,8 +116,7 @@
     .duration(300)
     .attr('cx', d => settings.projection([d.longitude, d.latitude])[0])        
     .attr('cy', d => settings.projection([d.longitude, d.latitude])[1])
-    .style('stroke', 'orange')
-   
+    .style('fill', d => color(d.latitude))
   };
 })();
 
