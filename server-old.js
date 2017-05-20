@@ -3,7 +3,7 @@ const app = express();
 const server = require('http').createServer(app);
 const path = require('path');
 const RTM = require("satori-sdk-js");
-const streamline = require('./lib/index.js');
+const streamline = require('./lib/index-old.js');
 const dotenv = require('dotenv');
 
 dotenv.load()
