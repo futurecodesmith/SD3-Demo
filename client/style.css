@@ -304,13 +304,17 @@ h2 {
   vertical-align: middle;
   text-align:center;
   font-size:40px;
-  line-height: 600px;
+  line-height: 500px;
   -webkit-transition: opacity .5s ease-in-out;
   -moz-transition: opacity .5s ease-in-out;
   -ms-transition: opacity .5s ease-in-out;
   -o-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
   z-index:1;
+}
+
+.image-container .image-overlay-long{
+  line-height: 900px;
 }
 
 .image-container:hover .image-overlay{

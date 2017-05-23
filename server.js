@@ -217,8 +217,8 @@ let lineConfig = {
 };
 
 let scatterConfig = {
-  setWidth: 600,
-  setHeight: 400,
+  setWidth: 700,
+  setHeight: 500,
   xDomainUpper: 1500,
   xDomainLower: 0,
   yDomainUpper: 20000,
@@ -266,16 +266,16 @@ let barConfig = {
 };
 
 let bubbleConfig = {
-  setWidth: 600,
-  setHeight: 400,
+  setWidth: 800,
+  setHeight: 600,
   text: 'num_bikes_available',
   volume: 'num_bikes_available',
   color: '#63d198'
 };
 
 let pieConfig = {
-  setWidth: 600,
-  setHeight: 525,
+  setWidth: 800,
+  setHeight: 600,
   category: 'genre',//category to be show in pie slices
   count: 'count'
 };
