@@ -46,8 +46,9 @@ let mapQueue = [];
 //-------------------------------------
 
 let rtm = new RTM(endpoint, appKey);
+
 rtm.on("enter-connected", function () {
-  console.log("Connected to RTM!");
+  console.log("Connected to RTM! State:", rtm.state);
 });
 
 let subscriptionBike = rtm.subscribe(channelBike, RTM.SubscriptionMode.SIMPLE);
@@ -333,28 +334,29 @@ myStream.connect((socket) => {
   myStream.bubbleGraph(socket, bubbleData, bubbleConfig);
   myStream.pie(socket, pieData, pieConfig);
   myStream.map(socket, mapData, mapConfig);
-  // // console.log('CONNECT LENGTH: ',myStream.connections.length);
-  //   console.log('START: ', rtm.start);
-  // if (myStream.connections.length === 1) rtm.start();
-    setTimeout(() => {
-      if (myStream.connections.length === 1) {
-        rtm.start();
-        console.log('RTM STARTED');
-      };
-    }, 10)
 
 
-  // socket.on('SEND_OPEN', (data) => {
-  //   rtm.start()
-  // });
+  if (rtm.state === 'stopped' && myStream.connections.length === 1) rtm.start();
+
+  // setTimeout(() => {
+  //   if (rtm.state === 'stopped') {
+  //     console.log('STOPPED@@@@@@@')
+  //   };
+  // }, 10)
+
+  if (!myStream.connections.length) rtm.stop()
+
+  rtm.on('close', () => {
+    console.log('CLOSED!');
+  });
+
 
   socket.on('SEND_CLOSE', (data) => {
-    setTimeout(() => {
-      if (myStream.connections.length === 0) {
-        rtm.stop()
-        console.log('stopped RTM');
-      };
-    }, 10)
+    console.log('SEND CLOSE!!');
+    if (rtm.state !== 'stopped') rtm.stop();
+    if (myStream.connections.length === 0) {
+      console.log('NO CONNECTION!');
+    }
   })
 
 });
