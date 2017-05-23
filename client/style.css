@@ -41,7 +41,7 @@ body {
 }
 
 .sub-header img {
-  padding-top: 10px;
+  /*padding-top: 10px;*/
   max-height: 175px;
   vertical-align: middle;
 }
