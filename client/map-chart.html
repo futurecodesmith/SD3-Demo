@@ -17,22 +17,23 @@
     <a href="https://github.com/StreamlineD3"><img src="images/streamlined3-final.png" alt="StreamLine D3 Logo"></a>
   </header>
 
-  <div class="sub-chart-container">
+  <div>
     <div id="spinner"></div>
-    <div id="line-chart"></div>
-    <h2>Bikes rented, streaming from bike stations around the US</h2>
+    <div id="map"></div>
+    <h2>Satellite locations, streaming from NASA and Norad</h2>
 
     <div class="download-button-container">
       <button><a href="home-page.html">Back to Home Page</a></button>
     </div>
   </div>
 
-
-
   <script src="graphs/d3.min.js"></script>
   <script src="graphs/d3-scale-chromatic.min.js"></script>
   <script src="graphs/socket-client.js"></script>
-  <script type="text/javascript" src="graphs/line.js"></script> 
+
+  <script src="https://unpkg.com/topojson-client@3"></script>
+  <script type="text/javascript" src="graphs/map-source.js"></script>
+  <script type="text/javascript" src="graphs/map.js"></script> 
   <script src="spin.js"></script>
 
   <script>
@@ -43,10 +44,12 @@
     var spinner = new Spinner().spin()
     target.appendChild(spinner.el)
 
-    setTimeout(()=> {
+    let interval = setInterval(()=> {
       if (chart) {
       spinner.stop();
+      clearInterval(interval);
       }
+      console.log('inside interval')
     }, 3000);
 
   </script>
