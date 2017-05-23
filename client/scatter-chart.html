@@ -54,5 +54,11 @@
     }, 3000);
 
   </script>
+
+  <script>
+    window.onunload = function () {
+      socket.emit('SEND_CLOSE', 'closed');
+    }
+  </script>
 </body>
 </html>

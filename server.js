@@ -321,7 +321,7 @@ setInterval(() => {
 
 //---------------------------------CALL STREAMLINE FUNCTION------------------------------------
 
- rtm.start();
+//  rtm.start();
 
 let myStream = new streamline(server);
 
@@ -336,7 +336,12 @@ myStream.connect((socket) => {
   // // console.log('CONNECT LENGTH: ',myStream.connections.length);
   //   console.log('START: ', rtm.start);
   // if (myStream.connections.length === 1) rtm.start();
-
+    setTimeout(() => {
+      if (myStream.connections.length === 1) {
+        rtm.start();
+        console.log('RTM STARTED');
+      };
+    }, 10)
 
 
   // socket.on('SEND_OPEN', (data) => {
@@ -344,15 +349,12 @@ myStream.connect((socket) => {
   // });
 
   socket.on('SEND_CLOSE', (data) => {
-    
     setTimeout(() => {
       if (myStream.connections.length === 0) {
         rtm.stop()
-
         console.log('stopped RTM');
       };
     }, 10)
-
   })
 
 });
