@@ -44,12 +44,10 @@
     var spinner = new Spinner().spin()
     target.appendChild(spinner.el)
 
-    let interval = setInterval(()=> {
+    setTimeout(()=> {
       if (chart) {
       spinner.stop();
-      clearInterval(interval);
       }
-      console.log('inside interval')
     }, 3000);
 
   </script>

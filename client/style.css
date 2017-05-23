@@ -232,19 +232,23 @@ h2 {
   margin-left: -100px;
 }
 
+
+/***************************/
 #charts-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  /*margin: 200px 0;*/
+  margin: 0 auto; 
+  text-align: center;
 }
 
 .chart {
   /* border: 15px solid lightgrey;*/
   /*border: 15px solid rgb(41.2%, 41.2%, 41.2%);*/
-  height: 500px;
-  margin: 40px auto 100px auto;
+  height: 300px;
+  margin: 0px auto 0px auto;
   flex-basis: 40%; 
+  text-align: center;
   /*box-shadow: 4px 4px 2px 2px rgba(192, 192, 192, 0.4);*/
 }
 
@@ -253,6 +257,67 @@ h2 {
   width: auto;
 }
 
+.map-chart {
+  height: 600px;
+  margin: 0 auto 100px auto;
+}
+
+.map-chart img {
+  height: 600px;
+  width: auto;
+}
+
+.image-container{
+  position:relative;
+  overflow: hidden; 
+  display: table
+}
+  
+.image-container img {
+  max-width: 100%; 
+  height: auto;
+  display: block; /* added this */
+}
+
+.image-container a {
+  position:absolute;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index:2;
+}
+
+.image-container .image-overlay{
+  opacity:0;
+  position:absolute;
+  color: #fff;
+  background: rgba(56, 56, 56, 0.77);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  padding: 0;
+  display: table-cell;
+  vertical-align: middle;
+  text-align:center;
+  font-size:40px;
+  line-height: 600px;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -ms-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+  z-index:1;
+}
+
+.image-container:hover .image-overlay{
+  opacity:1;
+}
+
+/***************************/
 .instructions-container {
   text-align: center;
   /*letter-spacing: 5px;*/
@@ -304,9 +369,9 @@ h2 {
   margin-bottom: 75px;
 }
 
-.map-container {
+/*.map-container {
   padding: 0px 50px 100px 50px;
-}
+}*/
 
 #footer {
   background-color: rgb(41.2%, 41.2%, 41.2%); 
