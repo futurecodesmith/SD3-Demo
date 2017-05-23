@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server-old.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "cluster": "^0.7.7",
