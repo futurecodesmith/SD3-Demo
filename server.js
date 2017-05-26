@@ -360,3 +360,5 @@ myStream.connect((socket) => {
   })
 
 });
+
+server.listen(process.env.PORT || 3000, () => console.log('SERVER RUNNING ON 3000'));
