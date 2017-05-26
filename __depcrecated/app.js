@@ -2,15 +2,10 @@ var socket = io.connect();
 
 
 socket.on('send data', (data) => {
-  console.log('DATA FROM SOCKET', data);
 
   var margin = { top: 10, right: 20, bottom: 30, left: 30 };
   var width = 900 - margin.left - margin.right;
   var height = 565 - margin.top - margin.bottom;
-
-
-    console.log('data: ', data);
-
 
     var svg = d3.select('.chart')
       .append('svg')
@@ -36,7 +31,7 @@ socket.on('send data', (data) => {
       .call(d3.axisLeft(yScale).ticks(10));
 
     var line = d3.line()
-      .x(d => {console.log('INSIDE LINE: ',d);xScale(d.createdAt)})
+      .x(d => xScale(d.createdAt))
       .y(d => yScale(d.value))
       .curve(d3.curveCatmullRom.alpha(0.5));
     
