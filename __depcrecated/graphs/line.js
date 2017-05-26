@@ -1,12 +1,8 @@
 
 var socket = io.connect();
 
-// socket.on('send userData', (data) => {
-//   //console.log('DATA FROM USER', data);
-// })
 
 //////////if want to call API here would need line below////////////////
-// socket.emit('ApiData', apiCall() )
 
 let queue = [];
 let allData = [];

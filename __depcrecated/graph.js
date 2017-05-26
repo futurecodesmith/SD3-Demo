@@ -2,12 +2,7 @@
 
 var socket = io.connect();
 
-// socket.on('send userData', (data) => {
-//   //console.log('DATA FROM USER', data);
-// })
-
 //////////if want to call API here would need line below////////////////
-// socket.emit('ApiData', apiCall() )
 
 let queue = [];
 let allData = [];
@@ -36,7 +31,6 @@ socket.on('sendStreamData', (data) => {
   }
   
   if (data.length >= 20) {
-    console.log('more than 20')
     data = data.slice(data.length - 21);
   }
 
@@ -88,6 +82,5 @@ socket.on('sendStreamData', (data) => {
   setInterval(() => {
       allData.push(queue[counter]);
       counter++;
-      console.log('INSIDE INTERVAL', counter)
     }, 1000)
 
