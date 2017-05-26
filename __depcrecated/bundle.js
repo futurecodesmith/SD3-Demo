@@ -111,8 +111,6 @@ drawAxis(
   );
 
 socket.on('sendLineData', (allData) => {
-  
-  //console.log('ALL DATA: ', allData);
 
   //if data is not empty or data is new...
   if (allData.length > 0 || (currData.length > 0 && allData[allData.length - 1].xScale !== currData[currData.length - 1].xScale)) {
@@ -334,7 +332,6 @@ module.exports = {
   socket.on('sendBarData', (data) => {
     if (data.length > 0) {
       if (!settings) {
-        console.log('filling settings');
         settings = drawGrid(data)
       };
       drawChart(settings, data);
@@ -366,8 +363,6 @@ module.exports = {
 
   socket.on('sendScatterData', (allData) => {
   
-    //console.log('ALL DATA: ', allData);
-
     //if data is not empty or data is new...
     if (allData.length > 0 || (currData.length > 0 && allData[allData.length - 1].xScale !== currData[currData.length - 1].xScale)) {
 
