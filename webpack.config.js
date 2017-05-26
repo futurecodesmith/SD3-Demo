@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './home-page.html',
+      template: './client/home-page.html',
       inject: 'body',
     })
   ],
