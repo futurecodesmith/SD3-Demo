@@ -3,7 +3,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: './client/index.js',
+  entry: './server.js',
   output: {
     path: path.join(__dirname, 'build'),
     // publicPath: '/build/',
@@ -12,7 +12,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './home-page.html',
       inject: 'body',
     })
   ],
