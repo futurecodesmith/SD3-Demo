@@ -23,7 +23,6 @@ var svg = d3.select('.chart')
 
 
 socket.on('sendStreamData', (data) => {
-    console.log('received data!', data); 
   var xScale = d3.scaleLinear()
     .domain([0, 200])
     // .domain([
@@ -104,32 +103,4 @@ svg.selectAll('.dot')
 
 
 })
-
-
-//////////RENDER DATA EVERY 1 SECOND////////////////////////////////////////
-
-//to convert data.last_reported to hour:seconds:minutes
-// function secondsToHms(d) {
-//     d = Number(d);
-//     var h = Math.floor(d / 360000000);
-//     var m = Math.floor(d % 3600 / 60);
-//     var s = Math.floor(d % 3600 % 60);
-
-//     return h + ':' + m + ':' + s; 
-// }
-
-// setInterval(() => {
-//     // queue.forEach(obj => {
-//     //   if (obj.station_id < 200) {
-//     //     allData.push(obj);
-//     //   }
-//     // })
-//      // allData.push(queue[counter]);
-//       counter++;
-//       console.log('INSIDE INTERVAL', counter)
-//     }, 50)
-
-
-
- 
 
