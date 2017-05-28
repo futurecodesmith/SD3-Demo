@@ -7,6 +7,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=Rubik:300,400" rel="stylesheet">
 
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="audio-style.css">
   <title>StreamLine D3</title>
@@ -14,11 +16,15 @@
 </head>
 
 <body>
-  <header class="header">
-    <a href="https://github.com/StreamlineD3"><img src="images/streamlined3-no-bg.png" alt="StreamLine D3 Logo"></a>
+  <header class="header container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
+        <a href="https://github.com/StreamlineD3"><img class="img-responsive center-block" src="images/streamlined3-no-bg.png" alt="StreamLine D3 Logo"></a>
+      </div>
+    </div>
   </header>
 
-  <div class="info-box">
+  <div class="info-box container-fluid">
     <h3>A Real-Time Visualization Library</h3>
     <div class="download-button-container">
       <button><a href="https://github.com/StreamlineD3">Download on Github</a></button>
@@ -26,36 +32,48 @@
   </div>
 
   <!-- Bar Graph -->
-  <div class="bar-container">
-    <div id="bar-graph"></div>
+  <div class="bar-container container-fluid">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <div id="bar-graph"></div>
+      </div>
+    </div>  
   </div>
 
-  <div id="json-viewer"></div>
-
-  <div class="pitch-container">
-    <h3>Streaming Data Visualized</h3>
-    <p>The face of data is changing. In the coming years, the amount of streaming data will increase dramatically. We will need
-      ways to analyze and visualize this data more than ever before. StreamLineD3 is javascript library that connects real-time
-      data streams with d3. You choose your api and it sets up your socket connection. Choose from six different template
-      graphs optimized for streaming data. After you enter your parameters, your graph is done! And try out using local streams,
-      too. Go play with the speech to text visualization tool below!</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div id="json-viewer" class="col-sm-10 col-sm-offset-1"></div>
+    </div>
   </div>
 
-  <div class="benefits-container">
-    <div class="third">
-      <img src="images/gear-icon.png" alt="customizable icon">
-      <h1>CUSTOMIZABLE </h1>
-      <h3>Make each visualization your own with custom colors, fonts, heights, widths, and more.</h3>
+  <div class="pitch-container container-fluid">
+    <div class="col-sm-10 col-sm-offset-1">
+      <h3>Streaming Data Visualized</h3>
+      <p>The face of data is changing. In the coming years, the amount of streaming data will increase dramatically. We will need
+        ways to analyze and visualize this data more than ever before. StreamLineD3 is javascript library that connects real-time
+        data streams with d3. You choose your api and it sets up your socket connection. Choose from six different template
+        graphs optimized for streaming data. After you enter your parameters, your graph is done! And try out using local streams,
+        too. Go play with the speech to text visualization tool below!</p>
     </div>
-    <div class="third">
-      <img src="images/fast-icon.png" alt="customizable icon">
-      <h1>PERFORMANT</h1>
-      <h3>Our diffing algorithm renders only the data that changes allowing for fast performance and smooth transitions.</h3>
-    </div>
-    <div class="third">
-      <img src="images/scale-icon.png" alt="customizable icon">
-      <h1>SCALABLE</h1>
-      <h3>Load balancing through Node clusters lets your app scale to multiple streams and visualizations.</h3>
+  </div>
+
+  <div class="benefits-container container-fluid">
+    <div class="row">
+      <div class="third col-sm-4">
+        <img src="images/gear-icon.png" alt="customizable icon">
+        <h1>CUSTOMIZABLE </h1>
+        <h3>Make each visualization your own with custom colors, fonts, heights, widths, and more.</h3>
+      </div>
+      <div class="third col-sm-4">
+        <img src="images/fast-icon.png" alt="customizable icon">
+        <h1>PERFORMANT</h1>
+        <h3>Our diffing algorithm renders only the data that changes allowing for fast performance and smooth transitions.</h3>
+      </div>
+      <div class="third col-sm-4">
+        <img src="images/scale-icon.png" alt="customizable icon">
+        <h1>SCALABLE</h1>
+        <h3>Load balancing through Node clusters lets your app scale to multiple streams and visualizations.</h3>
+      </div>
     </div>
   </div>
 
@@ -122,25 +140,29 @@
 
   <hr class="line" />
 
-  <div id="record">
-    <h1 id="speech-header">Speech to Text Visualization</h1>
-
-    <div id="results-container">
-      <span id="results">Results:</span>
-      <label class="radio"><input type="radio" name="recognition-type" value="final" /> Final only</label>
-      <label class="radio"><input type="radio" name="recognition-type" value="interim" checked="checked" />Interim</label>
+  <div id="record" class="container-fluid">
+    <div class="row">
+      <h1 id="speech-header">Speech to Text Visualization</h1>
     </div>
+
+    <div class="row" id="results-container">
+      <span class="col-sm-4" id="results">Results:</span>
+      <label class="radio col-sm-4"><input type="radio" name="recognition-type" value="final" /> Final only</label>
+      <label class="radio col-sm-4"><input type="radio" name="recognition-type" value="interim" checked="checked" />Interim</label>
+    </div>  
 
     <textarea id="transcription" readonly="readonly"></textarea>
 
-    <div class="buttons-wrapper">
-      <button id="button-play-ws" class="button-demo">Record</button>
-      <button id="button-stop-ws" class="button-demo">Stop</button>
-      <button id="clear-all" class="button-demo">Clear</button>
+    <div class="row">
+      <button id="button-play-ws" class="button-demo col-sm-4">Record</button>
+      <button id="button-stop-ws" class="button-demo col-sm-4">Stop</button>
+      <button id="clear-all" class="button-demo col-sm-4">Clear</button>
     </div>
-    <span id="ws-unsupported" class="hidden">API not supported</span>
 
-    <div id="log"></div>
+      <span id="ws-unsupported" class="hidden">API not supported</span>
+
+      <div id="log"></div>
+
   </div>
 
   <div id="word-cloud"></div>
