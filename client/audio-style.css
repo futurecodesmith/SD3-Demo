@@ -23,8 +23,9 @@ body {
 }
 
 #results-container {
-  display: inline;
+  /*display: inline;*/
   /*margin-left: 63px;*/
+  /*display: none;*/
 }
 
 #results {
@@ -37,13 +38,9 @@ body {
   font-weight: 200;
 }
 
-.buttons-wrapper {
-  text-align: center;
-  width: 525px;
-}
-
 .hidden {
   display: none;
+  text-align: center;
 }
 
 #transcription {
@@ -68,12 +65,12 @@ body {
   font-size: 1em;
   font-weight: 300;
  /* margin-left: 190px;*/
-  margin-left: 145px;
+  margin: 0 auto;
 }
 
 .button-demo {
   padding: 0.5em 2.5em;
-  display: inline-block;
+  /*display: inline-block;*/
   margin: 10px 1em;
   border-radius: 8px;
   font-size: .8em;
