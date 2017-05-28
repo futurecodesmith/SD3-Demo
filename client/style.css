@@ -10,54 +10,28 @@ body {
 
 .header {
   background-color: #383838; 
-  height: 600px; 
-  line-height: 425px;
+  /*max-height: 400px; 
+  line-height: 425px;*/
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /*text-align: center;*/
 }
 
-.header a h1 {
-  color: white;
+.header a {
   text-align: center;
   vertical-align: middle;
-  font-size: 40px; 
-  font-weight: 700;
 }
 
 .header img {
-  padding-top: 30px;
-  max-height: 550px;
-  vertical-align: middle;
+  /*padding-top: 30px;*/
+  max-height: 100px;
+  width: auto; 
+  /*vertical-align: middle;*/
+  text-align: center;
+  padding: 5%;
 }
 
 .header a {
   text-decoration: none;
-}
-
-.sub-header {
-  background-color: #383838; 
-  height: 200px; 
-  line-height: 200px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.sub-header img {
-  /*padding-top: 10px;*/
-  max-height: 175px;
-  vertical-align: middle;
-}
-
-.sub-header a {
-  text-decoration: none;
-}
-
-.sub-chart-container {
-  margin-top: 40px;
-}
-
-h2 {
-  padding: 25px;
-  font-family: 'Rubik', sans-serif;
-  font-size: 18px;
 }
 
 .info-box {
@@ -69,7 +43,7 @@ h2 {
   color: grey;
   vertical-align: middle;
   font-weight: 400;
-  font-size: 20px;
+  font-size: 1.5em;
 }
 
 .download-button-container {
@@ -82,7 +56,7 @@ h2 {
   background-color:#6AB038;
   margin-bottom: 20px;
   padding: 15px 30px;
-  font-size: 20px;
+  font-size: 1em;
   border-radius: 5px;
   cursor: pointer;
   border: none;
@@ -129,14 +103,12 @@ h2 {
 
 #json-viewer {
   border: 1px solid black;
-  width: 800px;
-  height: 50px;
   text-align: center;
-  overflow: scroll;
   font-size: .9em;
+  padding: 10px;
   font-weight: 200;
-  margin: 10px auto;
-  line-height: 50px;
+  margin: 0 5%;
+  /*line-height: 50px;*/
 }
 
 .json-stats {
@@ -146,24 +118,13 @@ h2 {
 }
 
 .benefits-container {
-  display: flex;
   justify-content: center;
-  flex-direction: row;
   background-color:#383838;
-  height: 450px;
   color: white;
-  margin: 40px 0 2% 0;
-  padding-top: 125px;
 }
 
 .third {
-  display: flex;
-  width: 25%;
-  height: 300px;
-  /*border: 1px solid black;*/
-  margin: 25px 3%;
-  flex-direction: column;
-  
+  padding: 80px 40px;
 }
 
 .third img {
@@ -195,10 +156,9 @@ h2 {
 }
 
 .pitch-container h3 {
-  
   text-align: center;
-  margin: 30px 0 20px 0;
-  font-size: 40px;
+  margin: 30px 5% 20px 5%;
+  font-size: 2em;
   line-height: 30px;
 }
 
@@ -206,8 +166,8 @@ h2 {
   text-align: center;
   font-family: 'Rubik', sans-serif;
   font-weight: 300;
-  font-size: 20px;
-  margin: 0 24%;
+  font-size: 1em;
+  margin: 0 5%;
   line-height: 40px;
 }
 
@@ -378,3 +338,21 @@ h2 {
   color: white;
   font-weight: 200;
 }
+
+/////////////////////////
+
+@media (min-width: 600px) {
+   .pitch-container p {
+     font-size: 1.5em;
+     margin: 0 15%;
+   }
+
+   .header img {
+      /*padding-top: 30px;*/
+      max-height: 400px;
+      width: auto; 
+      /*vertical-align: middle;*/
+      text-align: center;
+      padding: 5%;
+    }
+  }
