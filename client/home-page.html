@@ -77,57 +77,47 @@
     </div>
   </div>
 
+  <div class="image-container">
+    <a href="line-chart.html"></a> 
+    <div class="image-overlay image-overlay-long">
+      <h3>CLICK FOR LIVE DATA</h3> 
+    </div>
+    <img src="images/line.png" alt="Scatter Chart"> 
+  </div>
 
-  <div class="container-fluid" id="charts-container">
+  <div class="image-container">
+    <a href="pie-chart.html"></a> 
+    <div class="image-overlay image-overlay-long">
+      <h3>CLICK FOR LIVE DATA</h3> 
+    </div>
+    <img src="images/pie.png" alt="Scatter Chart"> 
+  </div>
+
+  <div class="image-container">
+    <a href="scatter-chart.html"></a> 
+    <div class="image-overlay image-overlay-long">
+      <h3>CLICK FOR LIVE DATA</h3> 
+    </div>
+    <img src="images/scatter.png" alt="Scatter Chart"> 
+  </div>
+  
+  <div class="image-container">
+    <a href="bubble-chart.html"></a> 
+    <div class="image-overlay image-overlay-long">
+      <h3>CLICK FOR LIVE DATA</h3> 
+    </div>
+    <img src="images/bubble.png" alt="Scatter Chart"> 
+  </div>
+  
+
+  <div class="container-fluid instructions-container">
     <div class="row">
-      <div class="chart col-sm-6">
-        <div class="image-container">
-          <a href="line-chart.html"></a>
-          <div class="image-overlay">
-            <h3>CLICK FOR LIVE DATA</h3> 
-          </div>
-          <img class="img-responsive" src="images/line.png" alt="Line Chart">
-        </div>
-      </div>
-    
-      <div class="chart col-sm-6">
-        <div class="image-container">
-          <a href="pie-chart.html"></a>
-          <div class="image-overlay">
-            <h3>CLICK FOR LIVE DATA</h3> 
-          </div>
-          <img class="img-responsive" src="images/pie.png" alt="Pie Chart">  
-        </div>
-      </div>
-
-      <div class="chart col-sm-6">
-        <div class="image-container">
-          <a href="scatter-chart.html"></a>
-          <div class="image-overlay">
-            <h3>CLICK FOR LIVE DATA</h3> 
-          </div>
-          <img class="img-responsive" src="images/scatter.png" alt="Scatter Chart">  
-        </div>
-      </div>
-
-      <div class="chart col-sm-6">
-        <div class="image-container">
-          <a href="bubble-chart.html"></a>
-          <div class="image-overlay">
-            <h3>CLICK FOR LIVE DATA</h3>         
-          </div>
-          <img class="img-responsive" src="images/bubble.png" alt="Bubble Chart"> 
-        </div>
-      </div>
+      <h3>For detailed instructions, visit our <a href="https://github.com/StreamlineD3/StreamlineD3#getting-started">Github</a>      page.</h3>
     </div>
   </div>
 
-  <div class="container-fluid instructions-container">
-    <h3>For detailed instructions, visit our <a href="https://github.com/StreamlineD3/StreamlineD3#getting-started">Github</a>      page.</h3>
-  </div>
-
-  <!-- Map Graph -->
-  <div class="map-chart image-container">
+  
+  <div class="image-container image-map">
     <a href="map-chart.html"></a> 
     <div class="image-overlay image-overlay-long">
       <h3>CLICK FOR LIVE DATA</h3> 
@@ -146,19 +136,20 @@
       <h1 id="speech-header">Speech to Text Visualization</h1>
     </div>
 
-    <div class="row" id="results-container">
-      <span class="col-sm-4" id="results">Results:</span>
-      <label class="radio col-sm-4"><input type="radio" name="recognition-type" value="final" /> Final only</label>
-      <label class="radio col-sm-4"><input type="radio" name="recognition-type" value="interim" checked="checked" />Interim</label>
+    <div id="results-container">
+      <span  class="radio" id="results">Results:</span>
+      <label class="radio"><input type="radio" name="recognition-type" value="final" /> Final only</label>
+      <label class="radio"><input type="radio" name="recognition-type" value="interim" checked="checked" />Interim</label>
     </div>  
 
     <textarea id="transcription" readonly="readonly"></textarea>
 
     <div class="row">
-      <button id="button-play-ws" class="button-demo col-sm-4">Record</button>
-      <button id="button-stop-ws" class="button-demo col-sm-4">Stop</button>
-      <button id="clear-all" class="button-demo col-sm-4">Clear</button>
+      <button id="button-play-ws" class="button-demo">Record</button>
+      <button id="button-stop-ws" class="button-demo">Stop</button>
+      <button id="clear-all" class="button-demo">Clear</button>
     </div>
+
 
       <span id="ws-unsupported" class="hidden">API not supported</span>
 
