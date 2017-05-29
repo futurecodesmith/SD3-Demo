@@ -341,6 +341,30 @@ body {
   padding-top: 90px;
   margin: 5px;
 }
+/*----------------------------*/
+
+.sub-header {
+  background-color: #383838; 
+  height: 200px; 
+  line-height: 200px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.sub-header img {
+  /*padding-top: 10px;*/
+  max-height: 175px;
+  vertical-align: middle;
+}
+
+.sub-header a {
+  text-decoration: none;
+}
+
+.sub-chart-container {
+  margin-top: 40px;
+}
+
+
 
 /*-------------------------*/
 
