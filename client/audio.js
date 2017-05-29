@@ -37,7 +37,6 @@ if (window.SpeechRecognition === null) {
 
   };
 
-
   // Listen for errors
   recognizer.onerror = function (event) {
     log.innerHTML = 'Recognition error: ' + event.message + '<br />' + log.innerHTML;
