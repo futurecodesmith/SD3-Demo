@@ -123,7 +123,7 @@ body {
 }
 
 .third {
-  padding: 80px 40px;
+  padding: 20px 40px;
 }
 
 .third img {
@@ -217,7 +217,7 @@ body {
 }
 
 .map-chart {
-  height: 600px;
+  /*height: 600px;*/
   margin: 0 auto 100px auto;
 }
 
@@ -326,16 +326,16 @@ body {
 #footer {
   background-color: rgb(41.2%, 41.2%, 41.2%); 
   height: 200px; 
-  line-height: 125px;
   box-shadow: 0 -2px 2px 1px rgba(0, 0, 0, 0.2);
   margin-top: 200px;
 }
 
 #footer h4 {
-  padding-top: 40px;
   vertical-align: middle;
   color: white;
   font-weight: 200;
+  padding-top: 90px;
+  margin: 5px;
 }
 
 /*-------------------------*/
@@ -362,5 +362,9 @@ body {
       padding: 10px;
       margin: 0 5%;
       line-height: 50px;
+    }
+
+    .third {
+      padding: 80px 40px;
     }
   }
