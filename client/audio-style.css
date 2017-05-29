@@ -25,17 +25,16 @@ body {
 #results-container {
   display: inline;
   /*margin-left: 63px;*/
-  /*display: none;*/
 }
 
 #results {
   font-weight: 300;
-  margin-right: 12px;
 }
 
 .radio {
-  /*margin-right: 10px;*/
+  margin: 0 30px;
   font-weight: 200;
+  display: inline;
 }
 
 .hidden {
@@ -44,22 +43,22 @@ body {
 }
 
 #transcription {
-  display: block;
+  /*display: block;*/
   width: 100%;
   height: 2em;
   overflow-y: scroll;
   border: 1px solid #333333;
-  line-height: 1em;
-  font-size: .8em;
+  line-height: .5em;
+  font-size: 1em;
   font-weight: 200;
   padding: 10px;
-  /*vertical-align: middle;*/
+  vertical-align: middle;
 }
 
 #log {
   display: block;
   width: 50%;
-  height: 1.1em;
+  height: 1.05em;
   overflow-y: scroll;
   border: none;
   line-height: 1em;
@@ -69,6 +68,7 @@ body {
 }
 
 .button-demo {
+  display: inline-block;
   padding: 0.5em 2.5em;
   margin: 10px 10px;
   border-radius: 8px;
@@ -77,15 +77,15 @@ body {
   font-weight: 300;
   border: none;
   box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.2);
+  text-align: center;
 }
 
 #button-play-ws {
   border: 1px solid grey;
-  /*background-color: #6AB038;*/
-  background: #4eaf08; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover, #4eaf08 0%, #73ad47 48%, #50af0c 99%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover, #4eaf08 0%,#73ad47 48%,#50af0c 99%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center, #4eaf08 0%,#73ad47 48%,#50af0c 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: #4eaf08; 
+  background: -moz-radial-gradient(center, ellipse cover, #4eaf08 0%, #73ad47 48%, #50af0c 99%); 
+  background: -webkit-radial-gradient(center, ellipse cover, #4eaf08 0%,#73ad47 48%,#50af0c 99%); 
+  background: radial-gradient(ellipse at center, #4eaf08 0%,#73ad47 48%,#50af0c 99%); 
 }
 
 #button-stop-ws {
@@ -131,7 +131,7 @@ body {
 @media only screen and  (min-width: 600px) {
 
   #button-play-ws {
-    margin-left: 10%;
+    margin-left: 6%;
   }
 
 }
