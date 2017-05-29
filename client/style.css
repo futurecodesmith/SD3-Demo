@@ -22,8 +22,7 @@ body {
 }
 
 .header img {
-  /*padding-top: 30px;*/
-  max-height: 100px;
+  /*max-height: 100px;*/
   width: auto; 
   /*vertical-align: middle;*/
   text-align: center;
@@ -43,7 +42,7 @@ body {
   color: grey;
   vertical-align: middle;
   font-weight: 400;
-  font-size: 1.5em;
+  font-size: 1.2em;
 }
 
 .download-button-container {
@@ -104,16 +103,16 @@ body {
 #json-viewer {
   border: 1px solid black;
   text-align: center;
-  font-size: .9em;
-  padding: 10px;
-  font-weight: 200;
+  padding: 4px;
   margin: 0 5%;
-  /*line-height: 50px;*/
+  line-height: 25px;
 }
 
 .json-stats {
-  margin-right: 15px;
+  margin: 0 1.5%;
   display: inline;
+  font-size: 1em;
+  font-weight: 200;
   vertical-align: middle;
 }
 
@@ -339,20 +338,29 @@ body {
   font-weight: 200;
 }
 
-/////////////////////////
+/*-------------------------*/
 
-@media (min-width: 600px) {
+@media only screen and  (min-width: 600px) {
    .pitch-container p {
      font-size: 1.5em;
      margin: 0 15%;
    }
 
    .header img {
-      /*padding-top: 30px;*/
       max-height: 400px;
       width: auto; 
       /*vertical-align: middle;*/
       text-align: center;
-      padding: 5%;
+      /*padding: 5%;*/
+    }
+
+    .json-stats {
+      font-size: 1.3em;
+    }
+
+    #json-viewer {
+      padding: 10px;
+      margin: 0 5%;
+      line-height: 50px;
     }
   }
