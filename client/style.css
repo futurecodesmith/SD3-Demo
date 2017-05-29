@@ -120,6 +120,7 @@ body {
   justify-content: center;
   background-color:#383838;
   color: white;
+  padding: 20px 0;
 }
 
 .third {
@@ -194,9 +195,9 @@ body {
 
 /***************************/
 #charts-container {
-  display: flex;
+  /*display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: wrap;*/
   /*margin: 0 auto; */
   text-align: center;
 }
@@ -204,11 +205,11 @@ body {
 .chart {
   /* border: 15px solid lightgrey;*/
   /*border: 15px solid rgb(41.2%, 41.2%, 41.2%);*/
-  height: 300px;
-  margin: 0 auto 11% auto;
-  flex-basis: 40%; 
-  text-align: center;
   /*box-shadow: 4px 4px 2px 2px rgba(192, 192, 192, 0.4);*/
+  /*margin: 0 auto 11% auto;
+  flex-basis: 40%; */
+  height: 300px;
+  text-align: center;
 }
 
 .chart img {
