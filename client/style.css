@@ -222,7 +222,7 @@ body {
   position:relative;
   overflow: hidden; 
   display: table;
-  line-height: 450px;
+  line-height: 200px;
   margin: 0 auto;
 }
   
@@ -266,15 +266,11 @@ body {
   z-index:1;
 }
 
-
 .image-overlay h3 {
-  line-height: 450px;
-  font-size: 1.4em;
+  line-height: 200px;
+  font-size: 1em;
 }
 
-.image-map h3 {
-  margin-top: 200px;
-}
 
 .image-container .image-overlay-long{
   line-height: 900px;
@@ -351,7 +347,6 @@ body {
 }
 
 .sub-header img {
-  /*padding-top: 10px;*/
   max-height: 175px;
   vertical-align: middle;
 }
@@ -364,7 +359,14 @@ body {
   margin-top: 40px;
 }
 
+.sub-page h2{
+  font-size: 1em;
+}
 
+.sub-page .download-button-container {
+  padding: 4px 8px;
+  font-size: 1em;
+}
 
 /*-------------------------*/
 
@@ -399,6 +401,15 @@ body {
     .big-header {
       font-size: 3em;
       margin: 30px 10% 0 10%;
+    }
+
+    .image-overlay h3 {
+      line-height: 450px;
+      font-size: 1.4em;
+    }
+
+    .image-map h3 {
+      margin-top: 200px;
     }
 
   }
