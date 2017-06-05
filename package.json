@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node server-old.js"
+    "start": "node server-old.js",
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "dependencies": {
     "cluster": "^0.7.7",
